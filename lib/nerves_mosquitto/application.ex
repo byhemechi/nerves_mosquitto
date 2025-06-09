@@ -6,10 +6,14 @@ defmodule NervesMosquitto.Application do
   use Application
 
   @impl true
-  def start(_type, _args) do
+  def start(_type, args) do
     children = [
-      # Starts a worker by calling: NervesMosquitto.Worker.start_link(arg)
-      # {NervesMosquitto.Worker, arg}
+      {MuonTrap.Daemon,
+       [
+         Path.join(:code.priv_dir(:nerves_mosquitto), "binaries/mosquitto"),
+         args,
+         []
+       ]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

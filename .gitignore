@@ -21,3 +21,5 @@ nerves_mosquitto-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+/priv/binaries
