@@ -1,0 +1,17 @@
+{
+  "name": "ASDF Dev Container",
+  "image": "iloveitaly/asdf-devcontainer:0-ubuntu-22.04",
+  "forwardPorts": [6379, 4000],
+  "postCreateCommand": "/asdf-post-create.sh",
+
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    }
+  }
+}
